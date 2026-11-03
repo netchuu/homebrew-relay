@@ -12,12 +12,12 @@ You need two things: the app on your phone, and the helper on the computer that 
 **Android** (Android 10 or later):
 
 1. On the phone, download
-   [Relay-1.0.0.apk](https://github.com/netchuu/homebrew-tap/releases/download/android-1.0.0/Relay-1.0.0.apk)
+   [Relay-1.0.1.apk](https://github.com/netchuu/homebrew-tap/releases/download/android-1.0.1/Relay-1.0.1.apk)
    (27 MB).
 2. Open it. Android asks you to allow installing apps from your browser or file manager ("Install unknown
    apps"); allow it once, then tap Install.
 3. Optional, to check the download, compare its SHA-256 with the one on the
-   [release page](https://github.com/netchuu/homebrew-tap/releases/tag/android-1.0.0).
+   [release page](https://github.com/netchuu/homebrew-tap/releases/tag/android-1.0.1).
 
 **iPhone**: Relay for iOS is in App Store review and will be on the App Store soon.
 
