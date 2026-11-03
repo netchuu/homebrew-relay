@@ -45,8 +45,14 @@ a line starting with `{"v":2`; send it to your phone and paste it into the app's
 Allow notifications when asked. That's it: start Claude Code as usual, and its questions reach your phone
 whenever you're away from the computer.
 
+Replies you send from the phone are typed into the session as if you typed them, in Zed's terminal, iTerm2 and
+tmux. Elsewhere (Terminal.app, Warp, VS Code, the Claude desktop app) they still arrive, marked as coming from
+"another session".
+
 The first `relay pair` adds Relay's hooks to `~/.claude/settings.json` (keeping a backup) and starts the helper
-at login. To pair another phone later, run `relay pair` again.
+at login. If you use Zed, it also sets Zed's terminal to start through Relay (your shell, prompt and `claude`
+command stay the same), so new Zed terminal tabs take replies as typed input. A custom shell set in Zed is left
+alone, and `relay uninstall` undoes it. To pair another phone later, run `relay pair` again.
 
 ## Updating and removing
 

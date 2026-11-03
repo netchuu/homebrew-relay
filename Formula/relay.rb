@@ -3,27 +3,27 @@
 class Relay < Formula
   desc "Answer Claude Code prompts from your phone"
   homepage "https://relay.relay-cloud.workers.dev"
-  version "0.4.0"
+  version "0.5.0"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.4.0/relay-0.4.0-darwin-arm64.tar.gz"
-      sha256 "e73d874f9879c28f23fbbe78d6071d9cf924bf71a39d84267798e7dba564e526"
+      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0/relay-0.5.0-darwin-arm64.tar.gz"
+      sha256 "71889b1f91ab03f039bea60be7c1121d85ccc1f7cc6f97403cc35d7aab7d818d"
     end
     on_intel do
-      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.4.0/relay-0.4.0-darwin-x64.tar.gz"
-      sha256 "4c053306bced947183be6fd8632a1f37b32d7c2e4d50df16a284daf9ae3ad9ae"
+      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0/relay-0.5.0-darwin-x64.tar.gz"
+      sha256 "3e763aee546dbe450bbc7efea53627a93e785403675f78fffbc506c9a6161578"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.4.0/relay-0.4.0-linux-arm64.tar.gz"
-      sha256 "0058859edc5421e9c4a2686086d8d9a8e6e1f91c4a714a1afde74057df5ed59b"
+      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0/relay-0.5.0-linux-arm64.tar.gz"
+      sha256 "6a7917dd8eb1f5d774228e1a5ae40e197cc760f6a1aae790dcceaf28da876640"
     end
     on_intel do
-      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.4.0/relay-0.4.0-linux-x64.tar.gz"
-      sha256 "34ea47046bde068cb88f5bded08e6e6eeefa2bce11caaf319dbb4293eb58f684"
+      url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0/relay-0.5.0-linux-x64.tar.gz"
+      sha256 "168e9aa79e6abbd43a587e1265f5fec5181423e196e1361f8611c2256a63aa05"
     end
   end
 
