@@ -1,10 +1,27 @@
-# Relay for Mac and Linux
+# Relay
 
-This is the computer side of [Relay](https://relay.relay-cloud.workers.dev), an iPhone app for answering Claude Code
-while you're away from your desk. The helper watches your Claude Code sessions through hooks, sends their
-questions, plans and permission requests to your phone, and brings your answers back.
+[Relay](https://relay.relay-cloud.workers.dev) lets you answer Claude Code from your phone. When a session on
+your Mac or Linux computer asks a question, wants a plan approved or needs permission to run something, it
+shows up on your phone; you tap an answer and the session carries on. Everything between the phone and the
+computer is end-to-end encrypted.
 
-## Install
+You need two things: the app on your phone, and the helper on the computer that runs Claude Code.
+
+## 1. Install the app
+
+**Android** (Android 10 or later):
+
+1. On the phone, download
+   [Relay-1.0.0.apk](https://github.com/netchuu/homebrew-tap/releases/download/android-1.0.0/Relay-1.0.0.apk)
+   (27 MB).
+2. Open it. Android asks you to allow installing apps from your browser or file manager ("Install unknown
+   apps"); allow it once, then tap Install.
+3. Optional, to check the download, compare its SHA-256 with the one on the
+   [release page](https://github.com/netchuu/homebrew-tap/releases/tag/android-1.0.0).
+
+**iPhone**: Relay for iOS is in App Store review and will be on the App Store soon.
+
+## 2. Install the helper on your computer
 
 One command, on macOS or Linux:
 
@@ -18,19 +35,35 @@ Or with Homebrew (also on Linux):
 brew install netchuu/tap/relay && relay pair
 ```
 
-Either way you end up looking at a QR code: scan it with the Relay app and you're done. The first `relay pair`
-adds Relay's hooks to `~/.claude/settings.json` (keeping a backup) and starts the helper at login.
+Both end with a QR code in the terminal.
 
-To update, run `brew upgrade relay`, then `relay install` again so the running helper picks up the new version.
-To remove it, run `relay uninstall`, then `brew uninstall relay`. Your data stays in `~/.relay` until you delete
-it.
+## 3. Pair
 
-You need macOS or Linux (x64 or arm64; WSL counts) and Claude Code 2.1.316 or later. The macOS binaries are
-signed and notarized by Apple. The Linux ones are checked against `SHA256SUMS` by the installer and by Homebrew.
+Open Relay on the phone and point the camera at the QR code. (No camera? Under the QR code the terminal prints
+a line starting with `{"v":2`; send it to your phone and paste it into the app's text field.)
 
-On Linux the helper runs as a systemd user service. On a server, run `sudo loginctl enable-linger $USER` so it
-keeps running after you log out; `relay install` reminds you. Without systemd it runs as a background process
-that you start again after a reboot with `relay restart`. Run Claude Code inside tmux so replies from the phone
-arrive as typed input. On Alpine, install `libstdc++` first.
+Allow notifications when asked. That's it: start Claude Code as usual, and its questions reach your phone
+whenever you're away from the computer.
+
+The first `relay pair` adds Relay's hooks to `~/.claude/settings.json` (keeping a backup) and starts the helper
+at login. To pair another phone later, run `relay pair` again.
+
+## Updating and removing
+
+- **Helper:** `brew upgrade relay`, then `relay install` again so the running helper picks up the new version.
+  With the curl installer, run the same command again.
+- **Android app:** download the new APK and install it over the old one; your pairing stays.
+- **Remove the helper:** `relay uninstall`, then `brew uninstall relay`. Your data stays in `~/.relay` until you
+  delete it.
+
+## Requirements and notes
+
+- macOS or Linux (x64 or arm64; WSL counts) and Claude Code 2.1.316 or later.
+- The macOS binaries are signed and notarized by Apple. The Linux ones are checked against `SHA256SUMS` by the
+  installer and by Homebrew. The Android app is signed with Relay's own key, so updates install over it.
+- On Linux the helper runs as a systemd user service. On a server, run `sudo loginctl enable-linger $USER` so it
+  keeps running after you log out; `relay install` reminds you. Without systemd it runs as a background process
+  that you start again after a reboot with `relay restart`. Run Claude Code inside tmux so replies from the phone
+  arrive as typed input. On Alpine, install `libstdc++` first.
 
 Questions or problems: [support page](https://relay.relay-cloud.workers.dev/support).
