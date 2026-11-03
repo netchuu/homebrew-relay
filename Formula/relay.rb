@@ -6,6 +6,16 @@ class Relay < Formula
   version "0.5.0"
   license :cannot_represent
 
+  # Bottles hold the same signed binaries as the tarballs below. Pouring one skips Homebrew's
+  # source-build checks, which fail on an Xcode or CLT older than the running macOS.
+  bottle do
+    root_url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "92fccebff20387a3761b9ab6c2ff68fcb784049dc3f257cf08d6507d341d42cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "9a45b5b6c25dcf07ac341b5e7c5e5530ceca673c761425b343c8fb4bb4d0f104"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "425f4cb952c45ea3506f27135bd5bfd2da56c90972d021d8021782b939503ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "371f43bc5b7baea02cf625a48fb8f167a6e91e7db9e27c7e4599b24b0b87447f"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/netchuu/homebrew-tap/releases/download/v0.5.0/relay-0.5.0-darwin-arm64.tar.gz"
