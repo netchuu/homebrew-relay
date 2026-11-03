@@ -56,7 +56,9 @@ alone, and `relay uninstall` undoes it. To pair another phone later, run `relay 
 
 ## Updating and removing
 
-- **Helper:** `brew upgrade relay`, then `relay install` again so the running helper picks up the new version.
+- **Helper:** `brew upgrade netchuu/tap/relay && relay install`. Use the full name: Homebrew also has an
+  unrelated app called "relay", and a plain `brew upgrade relay` fails with "Cask 'relay' is not installed".
+  `relay install` restarts the helper on the new version.
   With the curl installer, run the same command again.
 - **Android app:** download the new APK and install it over the old one; your pairing stays.
 - **Remove the helper:** `relay uninstall`, then `brew uninstall relay`. Your data stays in `~/.relay` until you

@@ -38,8 +38,9 @@ class Relay < Formula
       The first time, it adds the Claude Code hooks and starts the helper, then shows a code to scan
       with the Relay app.
 
-      After `brew upgrade relay`, run `relay install` again so the helper restarts on the new version.
-      On Linux, run Claude Code inside tmux so replies from the phone arrive as typed input.
+      To update later (the full name matters: Homebrew has an unrelated "relay" app):
+        brew upgrade netchuu/tap/relay && relay install
+      Replies from the phone are typed in as if you typed them in Zed's terminal, iTerm2 and tmux.
     EOS
   end
 
