@@ -45,9 +45,12 @@ a line starting with `{"v":2`; send it to your phone and paste it into the app's
 Allow notifications when asked. That's it: start Claude Code as usual, and its questions reach your phone
 whenever you're away from the computer.
 
-Replies you send from the phone are typed into the session as if you typed them, in Zed's terminal, iTerm2 and
-tmux. Elsewhere (Terminal.app, Warp, VS Code, the Claude desktop app) they still arrive, marked as coming from
-"another session".
+Replies you send from the phone are typed into the session as if you typed them: in Zed's terminal, iTerm2 and
+tmux, and on the Mac also in the Claude desktop app and in Claude Code inside VS Code, Cursor, Devin (Windsurf) and
+Antigravity IDE. For the Claude app and editors, macOS asks once to let relay use Accessibility (click Open System
+Settings and turn relay on); it types in the background, so nothing jumps to the front, and while the Mac is
+locked the reply waits until you unlock. Elsewhere (Terminal.app, Warp, or without that permission) replies still
+arrive, marked as coming from "another session".
 
 The first `relay pair` adds Relay's hooks to `~/.claude/settings.json` (keeping a backup) and starts the helper
 at login. If you use Zed, it also sets Zed's terminal to start through Relay (your shell, prompt and `claude`
